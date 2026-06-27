@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - NUMU D</title>
+    <meta name="description" content="Actualités, culture et histoires autour du Bogolan et de l'artisanat malien avec NUMU D.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            color: var(--accent);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .blog-meta i {
+            color: var(--secondary);
+            margin-right: 5px;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .blog-title a {
+            color: var(--primary);
+        }
+
+        .blog-title a:hover {
+            color: var(--secondary);
+        }
+
+        .blog-excerpt {
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-read-more {
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .blog-read-more:hover {
+            color: var(--primary);
+        }
+        
+        .blog-read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .blog-read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 1px solid var(--secondary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-primary);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/images/logo-noir.png" alt="NUMU D" style="height: 40px; width: auto;"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
+                <li><a href="apropos.html" class="nav-link">La Maison</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Le Blog</h1>
+            <p>Découvrez l'histoire, la culture et l'actualité de NUMU D.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div id="blog-filters" class="filters"></div>
+            <div id="blog-grid" class="blog-grid">
+                <div class="spinner-container" style="grid-column: 1 / -1;">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand"><img src="assets/images/logo-blanc.png" alt="NUMU D" style="height: 50px; width: auto; margin-bottom: 10px;"></h3>
+                    <p class="footer-desc">Marque artisanale malienne spécialisée dans le Bogolan traditionnel et les créations contemporaines.</p>
+                </div>
+                <div>
+                    <h4>Liens Rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="sur-mesure.html">Sur mesure</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="apropos.html">La Maison</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
+                        <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
+                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/numu_d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/numu_d" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@numu_d" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p>&copy; 2026 NUMU D. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="conditions-vente.html">Conditions de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

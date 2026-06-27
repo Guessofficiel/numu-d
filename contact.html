@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - NUMU D</title>
+    <meta name="description" content="Contactez NUMU D pour toute question, commande ou collaboration.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            color: var(--accent);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-info {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 50px 40px;
+        }
+
+        .contact-info h2 {
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            color: var(--white);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-item p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .contact-form-container {
+            padding: 50px 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 2px rgba(139, 94, 60, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        #contact-message {
+            margin-top: 15px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        #contact-message.success {
+            display: block;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        #contact-message.error {
+            display: block;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-info { padding: 40px 20px; }
+            .contact-form-container { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/images/logo-noir.png" alt="NUMU D" style="height: 40px; width: auto;"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
+                <li><a href="apropos.html" class="nav-link">La Maison</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Une question, une commande sur mesure ? Nous sommes à votre écoute.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h2>Informations</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Notre Atelier</h4>
+                            <p>Bamako, Mali</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Téléphones & WhatsApp</h4>
+                            <p>(+223) 79 79 85 13<br>(+33) 06 51 04 69 02</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Emails</h4>
+                            <p>hello@numu-d.fr<br>sirandoudianka.creation@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lundi - Samedi : 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2 style="margin-bottom: 25px;">Envoyez-nous un message</h2>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Adresse Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sujet">Sujet *</label>
+                            <input type="text" id="sujet" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">Envoyer le message</button>
+                        
+                        <div id="contact-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand"><img src="assets/images/logo-blanc.png" alt="NUMU D" style="height: 50px; width: auto; margin-bottom: 10px;"></h3>
+                    <p class="footer-desc">Marque de mode artisanale made in Mali, fusionnant traditions africaines et modernité européenne.</p>
+                </div>
+                <div>
+                    <h4>Liens Rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="sur-mesure.html">Sur mesure</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="apropos.html">La Maison</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
+                        <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
+                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/numu_d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/numu_d" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@numu_d" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p>&copy; 2026 NUMU D. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="conditions-vente.html">Conditions de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

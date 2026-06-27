@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison - NUMU D</title>
+    <meta name="description" content="Découvrez l'histoire de NUMU D, marque artisanale malienne créée par Sirandou Dianka, nos valeurs et notre passion pour le Bogolan traditionnel.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            color: var(--accent);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .about-grid.reverse {
+            direction: rtl;
+        }
+
+        .about-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .values-section {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .value-card {
+            padding: 30px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-grid.reverse { direction: ltr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .about-image { height: 350px; }
+            .creator-image { width: 300px; height: 300px; }
+        }
+
+        .creator-image {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 8px solid var(--secondary);
+            box-shadow: var(--shadow-lg);
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/images/logo-noir.png" alt="NUMU D" style="height: 40px; width: auto;"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
+                <li><a href="apropos.html" class="nav-link active">La Maison</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Notre Histoire</h1>
+            <p>Fusionner les traditions africaines et la modernité.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- La Créatrice -->
+            <div class="about-grid">
+                <div>
+                    <!-- Portrait de Sirandou Dianka -->
+                    <img src="assets/images/creatrice.jpeg" alt="Sirandou Dianka, Créatrice" class="creator-image">
+                </div>
+                <div class="about-content">
+                    <h2>La créatrice</h2>
+                    <p>Fondée en 2023, <strong>NUMU D</strong> est une marque de mode artisanale (textile et bijoux) à impact social, économique et environnemental qui se positionne sur le marché du <em>slow fashion</em>. Le nom signifie "enfant" (dén) de "forgeron" (noumou) en bambara, et le D rappelle le nom de famille de sa créatrice : <strong>Sirandou Dianka</strong>.</p>
+                    <p>Sirandou est une styliste-designer franco-malienne. Issue de la caste des Niamakalah (artisans forgerons), elle s'est reconvertie dans la mode en 2020. Après avoir parcouru plusieurs pays africains (Sénégal, Côte d'Ivoire, Niger, etc.), elle retourne au Mali, son pays d'origine, pour lancer NUMU D et valoriser ce savoir-faire ancestral.</p>
+                </div>
+            </div>
+
+            <!-- La Démarche Artistique -->
+            <div class="about-grid reverse">
+                <div>
+                    <!-- Utilisation de l'image locale générée du tissu Bogolan -->
+                    <img src="assets/images/bogolan_detail.png" alt="Détails du tissu Bogolan" class="about-image">
+                </div>
+                <div class="about-content">
+                    <h2>La démarche artistique</h2>
+                    <p>Chaque création prend naissance dans la matière. À partir du coton malien tissé à la main, NUMU D imagine des formes, des coupes et des palettes de couleurs qui font le lien entre héritage textile malien, les inspirations et l'histoire de Sirandou, la créatrice.</p>
+                    <p>Au fil des collections, différents types de tissage ont été explorés, comme la crétone, toile 100 (2 fils), sergé ou encore falé (4 fils). Ainsi que plusieurs techniques de teinture artisanale.</p>
+                    <p>Certaines pièces révèlent des teintes profondes et naturelles comme l'indigo (n'galalan fini), le jaune ocre obtenu à partir du ngalama, ou le marron issu du zoro blé (raisin sauvage), appelé bassilan fini. D'autres intègrent l'imprimé bogolan, réalisé à partir de motifs imaginés puis appliqués à l'argile.</p>
+                    <p>Chaque collection est une manière d'explorer le textile autrement, entre la rencontre des savoir-faire anciens et une vision contemporaine.</p>
+                </div>
+            </div>
+
+            <!-- Les Artisans Partenaires -->
+            <div class="about-grid">
+                <div>
+                    <img src="assets/images/hero_bg_new.jpg" alt="Artisans partenaires NUMU D" class="about-image">
+                </div>
+                <div class="about-content">
+                    <h2>Les artisans partenaires</h2>
+                    <p>NUMU D s'appuie sur un réseau d'artisans partenaires à travers le Mali : tisserands, teinturiers, forgerons, bijoutiers et couturiers, tous porteurs de savoir-faire transmis de génération en génération.</p>
+                    <p>Pour le textile, la marque collabore notamment avec la coopérative <strong>KOYIBATON</strong> et <strong>CONSOMMONS AFRICAIN</strong>, basés à Ségou, pour le travail du tissage, ainsi qu'avec <strong>BIOTEX MALI HAND</strong> à Bamako pour les teintures artisanales.</p>
+                    <p>NUMU D développe également des pièces de bijouterie en collaboration avec la communauté touareg de l'association <strong>TIMIDWA</strong> à Bamako, dans une volonté d'explorer d'autres formes de création tout en restant fidèle à son ancrage artisanal.</p>
+                    <p>Ces collaborations durables participent à la préservation des savoir-faire locaux, au soutien de l'économie créative malienne et à une valorisation plus juste du travail artisanal.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Nos Valeurs</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-hammer value-icon"></i>
+                    <h3>Savoir-faire</h3>
+                    <p>Célébration de l'artisanat malien (forgerons, tisserands, teinturiers) et transmission de l'héritage ancestral.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-seedling value-icon"></i>
+                    <h3>Éco-responsabilité</h3>
+                    <p>Coton biologique et teintures naturelles (indigo, ngalama) certifiées ECOCERT et GOTS, dans une démarche durable.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users value-icon"></i>
+                    <h3>Éthique &amp; Humain</h3>
+                    <p>Des relations pérennes avec nos artisans partenaires pour un impact social positif au Mali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand"><img src="assets/images/logo-blanc.png" alt="NUMU D" style="height: 50px; width: auto; margin-bottom: 10px;"></h3>
+                    <p class="footer-desc">Marque de mode artisanale made in Mali, fusionnant traditions africaines et modernité européenne.</p>
+                </div>
+                <div>
+                    <h4>Liens Rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="sur-mesure.html">Sur mesure</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="apropos.html">La Maison</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
+                        <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
+                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/numu_d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/numu_d" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@numu_d" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p>&copy; 2026 NUMU D. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="conditions-vente.html">Conditions de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

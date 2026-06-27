@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Produit - NUMU D</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .detail-section {
+            padding: 120px 0 80px; /* Offset for navbar */
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .detail-image-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .detail-image {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .detail-category {
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .detail-price {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .detail-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .detail-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-actions .btn {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        .payment-methods {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 2rem;
+            color: #888;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .detail-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/images/logo-noir.png" alt="NUMU D" style="height: 40px; width: auto;"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="collections.html" class="nav-link active">Collections</a></li>
+                <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
+                <li><a href="apropos.html" class="nav-link">La Maison</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="detail-section">
+        <div class="container">
+            <div id="detail-container">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/numu_d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/numu_d" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@numu_d" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p>&copy; 2026 NUMU D. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="conditions-vente.html">Conditions de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/collection-details.js"></script>
+</body>
+</html>

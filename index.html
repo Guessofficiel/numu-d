@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMU D - Mode Artisanale · Textile &amp; Bijoux · Made in Mali</title>
+    <meta name="description" content="NUMU D, marque de mode artisanale made in Mali. Textile et bijoux faits main, coton biologique malien, teintures naturelles.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="NUMU D - Mode Artisanale · Made in Mali">
+    <meta property="og:description" content="Marque de mode artisanale, Textile et Bijoux, Made in Mali.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('assets/images/hero_bg_new.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 120px 0 80px;
+        }
+
+        .hero-content {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            animation: fadeInDown 1s ease 0.1s both;
+        }
+
+        .hero-tagline {
+            font-size: 1.6rem;
+            font-family: var(--font-secondary);
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease 0.3s both;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .hero-tagline strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .hero-subtitle-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.45s both;
+        }
+
+        .hero-subtitle-line span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: var(--font-primary);
+        }
+
+        .hero-subtitle-line::before,
+        .hero-subtitle-line::after {
+            content: '';
+            flex: 1;
+            max-width: 80px;
+            height: 1px;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-actions .btn {
+            padding: 16px 32px;
+            font-size: 1rem;
+            opacity: 1;
+        }
+
+        .hero-actions .btn-outline {
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .hero-actions .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .hero-trust {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .hero-trust span {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.75);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-trust i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* Quick univers strip */
+        .univers-strip {
+            background: var(--primary);
+            padding: 0;
+        }
+
+        .univers-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .univers-strip-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 20px;
+            color: var(--white);
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .univers-strip-item:last-child {
+            border-right: none;
+        }
+
+        .univers-strip-item:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-3px);
+        }
+
+        .univers-strip-item h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .univers-strip-item p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 12px;
+        }
+
+        .univers-strip-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--white);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Featured Collections */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .product-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            background-color: var(--accent);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .newsletter-input {
+            padding: 12px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-primary);
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.6rem; }
+            .hero-tagline { font-size: 1.2rem; }
+            .hero-trust { gap: 15px; }
+            .univers-strip-grid { grid-template-columns: 1fr; }
+            .univers-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .features-grid { grid-template-columns: 1fr; }
+            .savoir-faire-grid { grid-template-columns: 1fr; }
+            .savoir-faire-gallery { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* Savoir-faire */
+        .savoir-faire-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .savoir-faire-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .savoir-faire-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .savoir-faire-item i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .savoir-faire-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .savoir-faire-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .savoir-faire-gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="assets/images/logo-noir.png" alt="NUMU D" style="height: 40px; width: auto;"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
+                <li><a href="apropos.html" class="nav-link">La Maison</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>NUMU D</h1>
+                <p class="hero-tagline"><strong>Marque de mode artisanale</strong></p>
+                <div class="hero-subtitle-line">
+                    <span>Textile &amp; Bijoux &nbsp;·&nbsp; Made in Mali</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="collections.html" class="btn btn-primary">Découvrir les collections</a>
+                    <a href="sur-mesure.html" class="btn btn-outline">Création sur mesure</a>
+                </div>
+                <div class="hero-trust">
+                    <span><i class="fas fa-hand-sparkles"></i> Tissé &amp; teint à la main</span>
+                    <span><i class="fas fa-seedling"></i> Coton biologique malien</span>
+                    <span><i class="fas fa-gem"></i> Pièces en série limitée</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Accès rapide aux univers -->
+    <section class="univers-strip">
+        <div class="univers-strip-grid">
+            <a href="signature.html" class="univers-strip-item">
+                <h3>Signature</h3>
+                <p>Les pièces emblématiques de la marque</p>
+                <span>Explorer</span>
+            </a>
+            <a href="essentielles.html" class="univers-strip-item">
+                <h3>Les Essentielles</h3>
+                <p>Le quotidien, conçu pour durer</p>
+                <span>Explorer</span>
+            </a>
+            <a href="pieces-uniques.html" class="univers-strip-item">
+                <h3>Pièces Uniques</h3>
+                <p>Créations exceptionnelles &amp; prototypes</p>
+                <span>Explorer</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Collection à la une -->
+    <section class="section" style="background-color: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Collection à la une</h2>
+            <div id="featured-collections" class="featured-grid">
+                <!-- Dynamically populated by JS -->
+                <div class="spinner-container" style="grid-column: 1 / -1;">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="collections.html" class="btn btn-primary">Voir toutes les collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le savoir-faire NUMU D -->
+    <section class="section" style="background-color: var(--light);">
+        <div class="container">
+            <h2 class="section-title">Le savoir-faire NUMU D</h2>
+            <div class="savoir-faire-grid">
+                <div class="savoir-faire-item">
+                    <i class="fas fa-th"></i>
+                    <h3>Tissage</h3>
+                    <p>Le coton biologique malien est filé et tissé à la main sur des métiers traditionnels, perpétuant un savoir-faire ancestral transmis de génération en génération.</p>
+                </div>
+                <div class="savoir-faire-item">
+                    <i class="fas fa-tint"></i>
+                    <h3>Teinture</h3>
+                    <p>Les teintures naturelles — indigo, ngalama, rouge et jaune — sont préparées artisanalement par nos partenaires teinturiers à Bamako.</p>
+                </div>
+                <div class="savoir-faire-item">
+                    <i class="fas fa-cut"></i>
+                    <h3>Couture</h3>
+                    <p>Chaque pièce est assemblée et finie à la main dans nos ateliers, avec une attention minutieuse portée aux détails et à la qualité des finitions.</p>
+                </div>
+            </div>
+            <div class="savoir-faire-gallery">
+                <img src="assets/images/bogolan_detail.png" alt="Détail du pagne tissé" loading="lazy">
+                <img src="assets/images/sirandou_presentation.jpg" alt="Artisanat NUMU D" loading="lazy">
+                <img src="assets/images/hero_bg_new.jpg" alt="Atelier de teinture" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi nous choisir -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir NUMU D ?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-gem feature-icon"></i>
+                    <h3>Qualité Premium</h3>
+                    <p>Des matériaux sélectionnés avec soin pour une durabilité exceptionnelle.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-heart feature-icon"></i>
+                    <h3>Artisanat Local</h3>
+                    <p>Confectionné à la main au Mali, valorisant le savoir-faire traditionnel.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-leaf feature-icon"></i>
+                    <h3>Authenticité</h3>
+                    <p>Des motifs uniques et chargés d'histoire, issus de techniques ancestrales maliennes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 style="font-family: var(--font-secondary); margin-bottom: 15px;">Abonnez-vous à notre Newsletter</h2>
+            <p style="margin-bottom: 25px;">Recevez nos dernières actualités et offres exclusives.</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="text" id="nl-name" class="newsletter-input" placeholder="Votre Nom" required>
+                <input type="email" id="nl-email" class="newsletter-input" placeholder="Votre Email" required>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">S'abonner</button>
+                <div id="nl-message" style="margin-top: 10px; font-weight: 500;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand"><img src="assets/images/logo-blanc.png" alt="NUMU D" style="height: 50px; width: auto; margin-bottom: 10px;"></h3>
+                    <p class="footer-desc">Marque de mode artisanale made in Mali, textile et bijoux faits main.</p>
+                </div>
+                <div>
+                    <h4>Liens Rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="sur-mesure.html">Sur mesure</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="apropos.html">La Maison</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
+                        <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
+                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Suivez-nous</h4>
+                    <div class="footer-social" style="margin-bottom: 0; margin-top: 15px;">
+                        <a href="https://www.facebook.com/numu_d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/numu_d" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@numu_d" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/numu_d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/numu_d" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@numu_d" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p>&copy; 2026 NUMU D. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="conditions-vente.html">Conditions de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/newsletter.js"></script>
+    <script>
+        // Inline script to load featured collections for home page
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('featured-collections');
+            try {
+                const response = await fetch(CONFIG.collectionsApi);
+                if (!response.ok) throw new Error('Erreur réseau');
+                
+                const data = await response.json();
+                const featuredCollections = getFeaturedCollections(data).slice(0, 6);
+                
+                if (featuredCollections.length === 0) {
+                    container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Aucune collection à la une pour le moment.</p>';
+                    return;
+                }
+                
+                container.innerHTML = featuredCollections.map(item => {
+                    const id = encodeURIComponent(item.Id || '');
+                    const name = window.NUMUD.escapeHTML(item.Nom || 'Produit NUMU D');
+                    const category = window.NUMUD.escapeHTML(item.Categorie || 'Général');
+                    const description = window.NUMUD.escapeHTML(item.Description ? window.NUMUD.truncate(item.Description, 60) : '');
+                    const price = window.NUMUD.escapeHTML(item.Prix || '');
+                    const image = window.NUMUD.safeImageUrl(item.Image, 'https://via.placeholder.com/300x250?text=NUMU+D');
+                    const orderMessage = encodeURIComponent('Bonjour, je souhaite commander ' + (item.Nom || 'ce produit'));
+
+                    return `
+                    <article class="product-card">
+                        <img src="${image}" alt="${name}" class="product-img" loading="lazy">
+                        <div class="product-info">
+                            <div class="product-category">${category}</div>
+                            <h3 class="product-title">${name}</h3>
+                            <p style="font-size: 0.9rem; margin-bottom: 15px;">${description}</p>
+                            <div class="product-price">${price} CFA</div>
+                            <div class="product-actions">
+                                <a href="collection-details.html?id=${id}" class="btn btn-outline" style="padding: 8px 15px; flex: 1; font-size: 0.9rem;">Détails</a>
+                                <a href="https://wa.me/22379798513?text=${orderMessage}" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 8px 15px; font-size: 0.9rem;" title="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </article>`;
+                }).join('');
+                
+            } catch (error) {
+                console.error('Fetch error:', error);
+                container.innerHTML = '<div class="error-message" style="grid-column: 1/-1;">Impossible de charger les collections. Veuillez réessayer plus tard.</div>';
+            }
+        });
+    </script>
+</body>
+</html>

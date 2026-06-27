@@ -1,0 +1,506 @@
+﻿/* 
+ * NUMU D - Global Stylesheet
+ * Marque artisanale malienne
+ */
+
+@font-face {
+  font-family: 'Rounded Elegance';
+  src: url('../assets/fonts/RoundedElegance.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+:root {
+  --primary: #000000;     /* Noir */
+  --secondary: #555555;   /* Gris fonce */
+  --accent: #AAAAAA;      /* Gris clair */
+  --light: #F5F5F5;       /* Blanc casse */
+  --white: #FFFFFF;
+  
+  --font-primary: 'Rounded Elegance', sans-serif;
+  --font-secondary: 'Rounded Elegance', serif;
+  
+  --transition: all 0.3s ease-in-out;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.15);
+  --border-radius: 8px;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--light);
+  color: var(--primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #4a4a4a;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary);
+  margin: 15px auto 0;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  text-align: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: var(--white);
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E;
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  padding: 20px 0;
+  z-index: 1000;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar.scrolled {
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.footer-desc {
+  color: var(--light);
+  opacity: 0.8;
+}
+
+.footer h4 {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--light);
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: var(--light);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.footer-legal a {
+  color: var(--light);
+  opacity: 0.8;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+  color: var(--white);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.footer-social a:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP
+   ========================================================================== */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  transition: var(--transition);
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  background-color: #128C7E;
+}
+
+/* ==========================================================================
+   LOADING SPINNER
+   ========================================================================== */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--accent);
+  border-top: 4px solid var(--secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  text-align: center;
+  color: #d9534f;
+  padding: 20px;
+  background-color: #f9f2f2;
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+}
+
+
+/* ==========================================================================
+   MODAL PAIEMENT
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  max-width: 400px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: var(--transition);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #666;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.payment-btn-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.payment-method-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  background: var(--light);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.payment-method-btn:hover {
+  border-color: var(--secondary);
+  background: #fdfaf5;
+  transform: translateX(5px);
+}
+
+.payment-method-btn i {
+  font-size: 1.5rem;
+}
+
+.payment-orange { color: #FF7900; border-left: 4px solid #FF7900; }
+.payment-moov { color: #005A9C; border-left: 4px solid #005A9C; }
+.payment-wave { color: #1DBCEB; border-left: 4px solid #1DBCEB; }
+.payment-cb { color: #1434CB; border-left: 4px solid #1434CB; }
+
+.payment-instruction {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--secondary);
+  text-align: center;
+}
+
+.payment-instruction.active {
+  display: block;
+}

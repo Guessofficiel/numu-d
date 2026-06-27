@@ -1,0 +1,82 @@
+/* 
+ * NUMU D - Responsive Stylesheet
+ */
+
+/* ==========================================================================
+   TABLETS (MAX-WIDTH: 992px)
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* ==========================================================================
+   MOBILES (MAX-WIDTH: 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  /* Navigation */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--white);
+    flex-direction: column;
+    padding-top: 80px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    display: block;
+  }
+
+  /* Close button for menu */
+  .menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILES (MAX-WIDTH: 480px)
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
