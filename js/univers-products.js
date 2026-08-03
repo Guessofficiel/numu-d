@@ -12,10 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let allProducts = [];
 
     try {
-        const response = await fetch(CONFIG.collectionsApi);
-        if (!response.ok) throw new Error('Erreur reseau');
-
-        const data = await response.json();
+        const data = await window.NUMUD.fetchJSON(CONFIG.collectionsApi);
         allProducts = filterProductsByUniverse(data, universFilter);
 
         if (allProducts.length === 0) {
@@ -24,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        const categories = ['Tout', ...new Set(allProducts.map(item => item.Categorie).filter(Boolean))];
+        const categories = ['Tout', ...new Set(allProducts.map(item => window.NUMUD.getField(item, ['Categorie', 'Catégorie', 'Category'])).filter(Boolean))];
         if (filtersContainer) renderFilters(categories);
         renderProducts(allProducts);
 
@@ -44,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 event.target.classList.add('active');
 
                 const category = categories[Number(event.target.getAttribute('data-filter-index'))];
-                const products = category === 'Tout' ? allProducts : allProducts.filter(item => item.Categorie === category);
+                const products = category === 'Tout' ? allProducts : allProducts.filter(item => window.NUMUD.getField(item, ['Categorie', 'Catégorie', 'Category']) === category);
                 renderProducts(products);
             });
         });

@@ -28,6 +28,37 @@
             margin-bottom: 10px;
         }
 
+        .page-header .collection-trust {
+            max-width: 920px;
+            margin: 28px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.16);
+            gap: 28px;
+        }
+
+        .page-header .collection-trust span {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            color: rgba(255,255,255,0.78);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: none;
+            padding: 0;
+        }
+
+        .page-header .collection-trust i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header .collection-trust {
+                gap: 16px;
+            }
+        }
+
         .univers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -90,7 +121,7 @@
                 <li><a href="collections.html" class="nav-link active">Collections</a></li>
                 <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
                 <li><a href="apropos.html" class="nav-link">Maison</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="blog.html" class="nav-link">La galerie</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <button class="hamburger" aria-label="Ouvrir le menu">
@@ -102,7 +133,11 @@
     <header class="page-header">
         <div class="container">
             <h1>Nos Collections</h1>
-            <p>Trois univers, une même exigence artisanale.</p>
+            <div class="collection-trust" aria-label="Engagements NUMU D">
+                <span><i class="fas fa-hand-sparkles"></i> Tissé &amp; teint à la main</span>
+                <span><i class="fas fa-seedling"></i> Coton biologique malien</span>
+                <span><i class="fas fa-gem"></i> Pièces en série limitée</span>
+            </div>
         </div>
     </header>
 
@@ -110,29 +145,29 @@
         <div class="container">
             <div class="univers-grid">
                 <article class="univers-card">
-                    <img src="assets/images/bogolan_detail.png" alt="Collection Signature" class="univers-img" loading="lazy">
+                    <img src="assets/images/Essentiels.png" alt="Collection Signature" class="univers-img" loading="lazy">
                     <div class="univers-content">
-                        <h2>Signature</h2>
-                        <p>La collection Signature rassemble les pièces emblématiques de NUMU D. Chaque création est produite en série limitée et/ou sur mesure.</p>
-                        <a href="signature.html" class="btn btn-primary">Découvrir les pièces Signature</a>
+                        <h2>La gamme essentielle</h2>
+                        <p>La collection permanente de NUMU D. Des pièces intemporelles, pensées pour accompagner le quotidien, réalisées en petites séries ou sur commande selon les modèles.</p>
+                        <a href="essentielles.html" class="btn btn-primary">Découvrir les essentielles</a>
                     </div>
                 </article>
 
                 <article class="univers-card">
                     <img src="assets/images/sirandou_presentation.jpg" alt="Les Essentielles" class="univers-img" loading="lazy">
                     <div class="univers-content">
-                        <h2>Les Essentielles</h2>
-                        <p>Les Essentielles réunissent les pièces du quotidien conçues pour durer.</p>
-                        <a href="essentielles.html" class="btn btn-primary">Découvrir les Essentielles</a>
+                        <h2>Les collections signatures</h2>
+                        <p>Les créations emblématiques de NUMU D. Ce sont les pièces qui portent l'identité de la marque et qui prennent vie à travers les défilés, les expositions et les projets artistiques.</p>
+                        <a href="signature.html" class="btn btn-primary">Découvrir les signatures</a>
                     </div>
                 </article>
 
                 <article class="univers-card">
                     <img src="assets/images/hero_bg_new.jpg" alt="Pièces Uniques" class="univers-img" loading="lazy">
                     <div class="univers-content">
-                        <h2>Pièces Uniques</h2>
-                        <p>Créations exceptionnelles, prototypes et pièces de recherche.</p>
-                        <a href="pieces-uniques.html" class="btn btn-primary">Découvrir les pièces uniques</a>
+                        <h2>Les pièces coutures</h2>
+                        <p>Des créations sur mesure et personnalisées, imaginées en étroite collaboration avec chaque client pour donner vie à un projet unique.</p>
+                        <a href="pieces-uniques.html" class="btn btn-primary">Découvrir les pièces coutures</a>
                     </div>
                 </article>
             </div>
@@ -144,7 +179,7 @@
             <div class="footer-grid">
                 <div>
                     <h3 class="footer-brand"><img src="assets/images/logo-blanc.png" alt="NUMU D" style="height: 50px; width: auto; margin-bottom: 10px;"></h3>
-                    <p class="footer-desc">Marque artisanale malienne spécialisée dans le Bogolan traditionnel et les créations contemporaines.</p>
+                    <p class="footer-desc">Marque de mode artisanale made in Mali, textile et bijoux faits main.</p>
                 </div>
                 <div>
                     <h4>Liens Rapides</h4>
@@ -152,7 +187,7 @@
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="collections.html">Collections</a></li>
                         <li><a href="sur-mesure.html">Sur mesure</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog.html">La galerie</a></li>
                         <li><a href="apropos.html">La Maison</a></li>
                     </ul>
                 </div>

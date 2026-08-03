@@ -48,6 +48,23 @@
             animation: fadeInDown 1s ease 0.1s both;
         }
 
+        .hero-title-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-logo-img {
+            max-width: 280px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: fadeInDown 1s ease 0.1s both;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+        }
+
         .hero-tagline {
             font-size: 1.6rem;
             font-family: var(--font-secondary);
@@ -123,28 +140,6 @@
             color: var(--primary);
         }
 
-        .hero-trust {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            animation: fadeInUp 1s ease 0.8s both;
-        }
-
-        .hero-trust span {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.75);
-            letter-spacing: 0.5px;
-        }
-
-        .hero-trust i {
-            color: var(--accent);
-            margin-right: 8px;
-        }
-
         /* Quick univers strip */
         .univers-strip {
             background: var(--primary);
@@ -209,11 +204,107 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Featured Collections */
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+        /* Featured Carousel / Slider */
+        .featured-carousel-wrapper {
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .featured-carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+            border-radius: var(--border-radius);
+            padding: 10px 0;
+        }
+
+        .featured-slider-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .featured-slider-track .product-card {
+            flex: 0 0 calc(33.333% - 16px);
+            min-width: 280px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .featured-slider-track .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 992px) {
+            .featured-slider-track .product-card {
+                flex: 0 0 calc(50% - 12px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .featured-slider-track .product-card {
+                flex: 0 0 100%;
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: calc(50% - 25px);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            color: var(--primary);
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .carousel-btn.prev { left: -15px; }
+        .carousel-btn.next { right: -15px; }
+
+        @media (max-width: 768px) {
+            .carousel-btn.prev { left: 5px; }
+            .carousel-btn.next { right: 5px; }
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            width: 28px;
+            border-radius: 10px;
+            background: var(--primary);
         }
         
         .product-card {
@@ -304,7 +395,6 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.6rem; }
             .hero-tagline { font-size: 1.2rem; }
-            .hero-trust { gap: 15px; }
             .univers-strip-grid { grid-template-columns: 1fr; }
             .univers-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
             .features-grid { grid-template-columns: 1fr; }
@@ -372,7 +462,7 @@
                 <li><a href="collections.html" class="nav-link">Collections</a></li>
                 <li><a href="sur-mesure.html" class="nav-link">Sur mesure</a></li>
                 <li><a href="apropos.html" class="nav-link">La Maison</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="blog.html" class="nav-link">La galerie</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <button class="hamburger" aria-label="Ouvrir le menu">
@@ -385,19 +475,12 @@
     <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>NUMU D</h1>
-                <p class="hero-tagline"><strong>Marque de mode artisanale</strong></p>
-                <div class="hero-subtitle-line">
-                    <span>Textile &amp; Bijoux &nbsp;·&nbsp; Made in Mali</span>
-                </div>
+                <h1 class="hero-title-logo">
+                    <img src="assets/images/logo-blanc.png" alt="NUMU D" class="hero-logo-img">
+                </h1>
+                <p class="hero-tagline" style="margin-bottom: 2rem; font-size: 1.35rem;">À la croisée des savoir-faire d'hier et de la création contemporaine</p>
                 <div class="hero-actions">
                     <a href="collections.html" class="btn btn-primary">Découvrir les collections</a>
-                    <a href="sur-mesure.html" class="btn btn-outline">Création sur mesure</a>
-                </div>
-                <div class="hero-trust">
-                    <span><i class="fas fa-hand-sparkles"></i> Tissé &amp; teint à la main</span>
-                    <span><i class="fas fa-seedling"></i> Coton biologique malien</span>
-                    <span><i class="fas fa-gem"></i> Pièces en série limitée</span>
                 </div>
             </div>
         </div>
@@ -406,18 +489,18 @@
     <!-- Accès rapide aux univers -->
     <section class="univers-strip">
         <div class="univers-strip-grid">
-            <a href="signature.html" class="univers-strip-item">
-                <h3>Signature</h3>
+            <a href="essentielles.html" class="univers-strip-item">
+                <h3>La gamme essentielle</h3>
                 <p>Les pièces emblématiques de la marque</p>
                 <span>Explorer</span>
             </a>
-            <a href="essentielles.html" class="univers-strip-item">
-                <h3>Les Essentielles</h3>
+            <a href="signature.html" class="univers-strip-item">
+                <h3>Les collections signatures</h3>
                 <p>Le quotidien, conçu pour durer</p>
                 <span>Explorer</span>
             </a>
             <a href="pieces-uniques.html" class="univers-strip-item">
-                <h3>Pièces Uniques</h3>
+                <h3>Les pièces coutures</h3>
                 <p>Créations exceptionnelles &amp; prototypes</p>
                 <span>Explorer</span>
             </a>
@@ -425,15 +508,30 @@
     </section>
 
     <!-- Collection à la une -->
-    <section class="section" style="background-color: var(--white);">
-        <div class="container">
-            <h2 class="section-title">Collection à la une</h2>
-            <div id="featured-collections" class="featured-grid">
-                <!-- Dynamically populated by JS -->
-                <div class="spinner-container" style="grid-column: 1 / -1;">
-                    <div class="spinner"></div>
+    <section class="section" style="background-color: var(--white); overflow: hidden;">
+        <div class="container" style="position: relative;">
+            <h2 class="section-title">A la une</h2>
+            
+            <div class="featured-carousel-wrapper">
+                <button class="carousel-btn prev" id="featured-prev" aria-label="Précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" id="featured-next" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="featured-carousel-viewport" id="featured-viewport">
+                    <div id="featured-collections" class="featured-slider-track">
+                        <!-- Dynamically populated by JS -->
+                        <div class="spinner-container" style="width: 100%;">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="carousel-dots" id="featured-dots"></div>
             </div>
+
             <div style="text-align: center; margin-top: 40px;">
                 <a href="collections.html" class="btn btn-primary">Voir toutes les collections</a>
             </div>
@@ -443,55 +541,42 @@
     <!-- Le savoir-faire NUMU D -->
     <section class="section" style="background-color: var(--light);">
         <div class="container">
-            <h2 class="section-title">Le savoir-faire NUMU D</h2>
+            <h2 class="section-title">L'essence de  NUMU D</h2>
             <div class="savoir-faire-grid">
                 <div class="savoir-faire-item">
                     <i class="fas fa-th"></i>
-                    <h3>Tissage</h3>
-                    <p>Le coton biologique malien est filé et tissé à la main sur des métiers traditionnels, perpétuant un savoir-faire ancestral transmis de génération en génération.</p>
+                    <h3>Créer</h3>
+                    <p>Chaque création est pensée et dessinée par Sirandou, la créatrice. Matières, couleurs, volumes et détails sont imaginés pour faire dialoguer les savoir-faire artisanaux maliens avec une vision contemporaine de la mode.
+</p>
+                </div>
+                <div class="savoir-faire-grid">
+                <div class="savoir-faire-item">
+                    <i class="fas fa-th"></i>
+                    <h3>Tisser</h3>
+                    <p>Le coton est filé et tissé à la main sur des métiers traditionnels, perpétuant un savoir-faire ancestral transmis de génération en génération.</p>
                 </div>
                 <div class="savoir-faire-item">
                     <i class="fas fa-tint"></i>
-                    <h3>Teinture</h3>
-                    <p>Les teintures naturelles — indigo, ngalama, rouge et jaune — sont préparées artisanalement par nos partenaires teinturiers à Bamako.</p>
+                    <h3>Teindre</h3>
+                    <p>Les teintures naturelles : indigo, n'galama, et bogolan, sont teintées artisanalement par nos artisans partenaires à Ségou et à Bamako. </p>
                 </div>
                 <div class="savoir-faire-item">
                     <i class="fas fa-cut"></i>
-                    <h3>Couture</h3>
-                    <p>Chaque pièce est assemblée et finie à la main dans nos ateliers, avec une attention minutieuse portée aux détails et à la qualité des finitions.</p>
+                    <h3>Confectionner</h3>
+                    <p>Chaque pièce est assemblée avec soin dans nos ateliers, avec une attention minutieuse portée aux détails et à la qualité des finitions.</p>
                 </div>
             </div>
             <div class="savoir-faire-gallery">
-                <img src="assets/images/bogolan_detail.png" alt="Détail du pagne tissé" loading="lazy">
-                <img src="assets/images/sirandou_presentation.jpg" alt="Artisanat NUMU D" loading="lazy">
-                <img src="assets/images/hero_bg_new.jpg" alt="Atelier de teinture" loading="lazy">
+                <img src="assets/images/Créer.jpg.jpeg" alt="Détail du pagne tissé" loading="lazy">
+                <img src="assets/images/Tisser.jpg.jpeg" alt="Artisanat NUMU D" loading="lazy">
+                <img src="assets/images/Teinture.jpg.jpeg" alt="Atelier de teinture" loading="lazy">
+                <img src="assets/images/Confectionner.jpg.jpeg" alt="Atelier de confection" loading="lazy">
+
             </div>
         </div>
     </section>
 
-    <!-- Pourquoi nous choisir -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Pourquoi choisir NUMU D ?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-gem feature-icon"></i>
-                    <h3>Qualité Premium</h3>
-                    <p>Des matériaux sélectionnés avec soin pour une durabilité exceptionnelle.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-hand-holding-heart feature-icon"></i>
-                    <h3>Artisanat Local</h3>
-                    <p>Confectionné à la main au Mali, valorisant le savoir-faire traditionnel.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-leaf feature-icon"></i>
-                    <h3>Authenticité</h3>
-                    <p>Des motifs uniques et chargés d'histoire, issus de techniques ancestrales maliennes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Newsletter -->
     <section class="newsletter-section">
@@ -521,7 +606,7 @@
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="collections.html">Collections</a></li>
                         <li><a href="sur-mesure.html">Sur mesure</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog.html">La galerie</a></li>
                         <li><a href="apropos.html">La Maison</a></li>
                     </ul>
                 </div>
@@ -563,35 +648,56 @@
     <script src="js/main.js"></script>
     <script src="js/newsletter.js"></script>
     <script>
-        // Inline script to load featured collections for home page
+        // Inline script to load featured collections for home page with auto-scrolling carousel
         document.addEventListener('DOMContentLoaded', async () => {
             const container = document.getElementById('featured-collections');
+            const prevBtn = document.getElementById('featured-prev');
+            const nextBtn = document.getElementById('featured-next');
+
             try {
                 const response = await fetch(CONFIG.collectionsApi);
                 if (!response.ok) throw new Error('Erreur réseau');
                 
                 const data = await response.json();
-                const featuredCollections = getFeaturedCollections(data).slice(0, 6);
+                let featuredCollections = getFeaturedCollections(data);
+                
+                if (!featuredCollections || featuredCollections.length === 0) {
+                    featuredCollections = data.slice(0, 10);
+                } else if (featuredCollections.length < 4 && data.length >= 4) {
+                    // Combine to ensure a rich carousel experience
+                    const otherItems = data.filter(item => !featuredCollections.includes(item));
+                    featuredCollections = featuredCollections.concat(otherItems).slice(0, 10);
+                } else {
+                    featuredCollections = featuredCollections.slice(0, 10);
+                }
                 
                 if (featuredCollections.length === 0) {
-                    container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Aucune collection à la une pour le moment.</p>';
+                    container.innerHTML = '<p style="width: 100%; text-align: center;">Aucune collection à la une pour le moment.</p>';
+                    if (prevBtn) prevBtn.style.display = 'none';
+                    if (nextBtn) nextBtn.style.display = 'none';
                     return;
                 }
                 
                 container.innerHTML = featuredCollections.map(item => {
-                    const id = encodeURIComponent(item.Id || '');
-                    const name = window.NUMUD.escapeHTML(item.Nom || 'Produit NUMU D');
-                    const category = window.NUMUD.escapeHTML(item.Categorie || 'Général');
-                    const description = window.NUMUD.escapeHTML(item.Description ? window.NUMUD.truncate(item.Description, 60) : '');
-                    const price = window.NUMUD.escapeHTML(item.Prix || '');
-                    const image = window.NUMUD.safeImageUrl(item.Image, 'https://via.placeholder.com/300x250?text=NUMU+D');
-                    const orderMessage = encodeURIComponent('Bonjour, je souhaite commander ' + (item.Nom || 'ce produit'));
+                    const id = encodeURIComponent(window.NUMUD.getField(item, ['Id', 'ID', 'Identifiant'], ''));
+                    const rawName = window.NUMUD.getField(item, ['Nom', 'Nom produit', 'Produit', 'Titre'], 'Produit NUMU D');
+                    const name = window.NUMUD.escapeHTML(rawName);
+                    const categoryFromSheet = window.NUMUD.escapeHTML(window.NUMUD.getField(item, ['Categorie', 'Catégorie', 'Category'], 'General'));
+                    const rawDescription = window.NUMUD.getField(item, ['Description', 'Description produit', 'Details', 'Détails', 'Detail'], '');
+                    const description = window.NUMUD.escapeHTML(rawDescription ? window.NUMUD.truncate(rawDescription, 60) : '');
+                    const rawPrice = window.NUMUD.getField(item, ['Prix', 'Price', 'Tarif'], '');
+                    const price = window.NUMUD.escapeHTML(rawPrice);
+                    const image = window.NUMUD.getImageUrl(item, 'https://via.placeholder.com/300x250?text=NUMU+D');
+                    const orderMessage = encodeURIComponent('Bonjour, je souhaite commander ' + (rawName || 'ce produit'));
+                    const availability = String(window.NUMUD.getField(item, ['Disponible', 'Disponibilite', 'Disponibilité', 'Stock', 'Statut'], '')).trim().toLowerCase();
+                    const isAvailable = ['oui', 'yes', 'true', '1', 'disponible', 'available'].includes(availability);
+                    const paymentSelector = window.NUMUD.renderPaymentSelector({ productName: rawName, price: rawPrice, isAvailable });
 
                     return `
                     <article class="product-card">
                         <img src="${image}" alt="${name}" class="product-img" loading="lazy">
                         <div class="product-info">
-                            <div class="product-category">${category}</div>
+                            <div class="product-category">${categoryFromSheet}</div>
                             <h3 class="product-title">${name}</h3>
                             <p style="font-size: 0.9rem; margin-bottom: 15px;">${description}</p>
                             <div class="product-price">${price} CFA</div>
@@ -599,15 +705,166 @@
                                 <a href="collection-details.html?id=${id}" class="btn btn-outline" style="padding: 8px 15px; flex: 1; font-size: 0.9rem;">Détails</a>
                                 <a href="https://wa.me/22379798513?text=${orderMessage}" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 8px 15px; font-size: 0.9rem;" title="Commander sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             </div>
+                            ${paymentSelector}
                         </div>
                     </article>`;
                 }).join('');
+
+                initFeaturedCarousel(featuredCollections.length);
                 
             } catch (error) {
                 console.error('Fetch error:', error);
-                container.innerHTML = '<div class="error-message" style="grid-column: 1/-1;">Impossible de charger les collections. Veuillez réessayer plus tard.</div>';
+                container.innerHTML = '<div class="error-message" style="width: 100%;">Impossible de charger les collections. Veuillez réessayer plus tard.</div>';
             }
         });
+
+        function initFeaturedCarousel(totalItems) {
+            const track = document.getElementById('featured-collections');
+            const prevBtn = document.getElementById('featured-prev');
+            const nextBtn = document.getElementById('featured-next');
+            const dotsContainer = document.getElementById('featured-dots');
+            const wrapper = document.querySelector('.featured-carousel-wrapper');
+
+            if (!track) return;
+
+            let currentIndex = 0;
+            let autoPlayTimer = null;
+            const autoPlayDelay = 3500;
+
+            function getCardsPerPage() {
+                const width = window.innerWidth;
+                if (width > 992) return 3;
+                if (width > 600) return 2;
+                return 1;
+            }
+
+            function getMaxIndex() {
+                const cardsPerPage = getCardsPerPage();
+                return Math.max(0, totalItems - cardsPerPage);
+            }
+
+            function createDots() {
+                if (!dotsContainer) return;
+                dotsContainer.innerHTML = '';
+                const maxIndex = getMaxIndex();
+
+                if (maxIndex <= 0) {
+                    if (prevBtn) prevBtn.style.display = 'none';
+                    if (nextBtn) nextBtn.style.display = 'none';
+                    return;
+                } else {
+                    if (prevBtn) prevBtn.style.display = 'flex';
+                    if (nextBtn) nextBtn.style.display = 'flex';
+                }
+
+                for (let i = 0; i <= maxIndex; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `carousel-dot ${i === currentIndex ? 'active' : ''}`;
+                    dot.setAttribute('aria-label', `Aller à la diapositive ${i + 1}`);
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        updateCarousel();
+                        resetAutoPlay();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateCarousel() {
+                const maxIndex = getMaxIndex();
+                if (currentIndex > maxIndex) currentIndex = 0;
+                if (currentIndex < 0) currentIndex = maxIndex;
+
+                const firstCard = track.querySelector('.product-card');
+                if (!firstCard) return;
+
+                const cardWidth = firstCard.offsetWidth;
+                const gap = 24;
+                const moveAmount = (cardWidth + gap) * currentIndex;
+
+                track.style.transform = `translateX(-${moveAmount}px)`;
+
+                const dots = dotsContainer ? dotsContainer.querySelectorAll('.carousel-dot') : [];
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                const maxIndex = getMaxIndex();
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                const maxIndex = getMaxIndex();
+                if (currentIndex <= 0) {
+                    currentIndex = maxIndex;
+                } else {
+                    currentIndex--;
+                }
+                updateCarousel();
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                if (getMaxIndex() > 0) {
+                    autoPlayTimer = setInterval(nextSlide, autoPlayDelay);
+                }
+            }
+
+            function stopAutoPlay() {
+                if (autoPlayTimer) clearInterval(autoPlayTimer);
+            }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+            if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+
+            if (wrapper) {
+                wrapper.addEventListener('mouseenter', stopAutoPlay);
+                wrapper.addEventListener('mouseleave', startAutoPlay);
+            }
+
+            let startX = 0;
+            let isSwiping = false;
+
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isSwiping = true;
+                stopAutoPlay();
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                if (!isSwiping) return;
+                const endX = e.changedTouches[0].clientX;
+                const diffX = startX - endX;
+
+                if (Math.abs(diffX) > 40) {
+                    if (diffX > 0) nextSlide();
+                    else prevSlide();
+                }
+                isSwiping = false;
+                startAutoPlay();
+            }, { passive: true });
+
+            window.addEventListener('resize', () => {
+                createDots();
+                updateCarousel();
+            });
+
+            createDots();
+            updateCarousel();
+            startAutoPlay();
+        }
     </script>
 </body>
 </html>
