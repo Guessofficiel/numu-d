@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-09-01T14:11:45.175Z",
+  "collections": [
+    {
+      "Id": "1",
+      "Nom": "ROBE HAOUSSA",
+      "Prix": "45000",
+      "Categorie": "Vêtement",
+      "Description": "DESCRIPTION:\n\nRobe longue évasée à manches courtes 100% coton.\n\nMatière : crétone de coton\nCouleur indigo teinture naturelle artisanale \n\nDisponible en 2 coloris / indigo clair et foncé \nTaille S/M (36-40) / poitrine 80-90\nTaille L/XL (42-46) / poitrine 90- 105\n\nLongueur robe 160 cm \n",
+      "Image": "https://drive.google.com/file/d/15RXeVVFhI0RZDiDY5yBrSI40Ik97pGZT/view?usp=drive_link; https://drive.google.com/file/d/11VEna5RrjuiMMfv_tz4CER-n86I3w_OT/view?usp=drive_link; https://drive.google.com/file/d/1XDjgKzWc64xlt2GOhWpj-Lts7DTc1aoD/view?usp=drive_link; https://drive.google.com/file/d/1D28y5UXy1Tbb8cYIhXNJdvhB5MsgoajX/view?usp=drive_link",
+      "Disponible": "OUI",
+      "Univers": "Essentielles",
+      "A_la_une": "OUI"
+    },
+    {
+      "Id": "2",
+      "Nom": "PANTALON SIRA",
+      "Prix": "30000",
+      "Categorie": "Vêtement",
+      "Description": "DESCRIPTION:\n\nPantalon large à plis creux, 100% coton.\n\nMatière : crétone de coton\nCouleur indigo teinture naturelle artisanale \n\nDisponible en 2 coloris bleu clair et bleu foncé \n\nTaille S/M(36-40) / longueur 150 cm\nTaille L/XL (42-46) / longueur 160 cm\n\n\n",
+      "Image": "",
+      "Disponible": "Oui",
+      "Univers": "Essentielles",
+      "A_la_une": "OUI"
+    },
+    {
+      "Id": "3",
+      "Nom": "BUBU TOP SEYNA",
+      "Prix": "35000",
+      "Categorie": "Vêtement",
+      "Description": "DESCRIPTION:\n\nTop à manches kimono 100% coton.\n\nMatière : pagne tissé \nCouleur indigo teinture naturelle artisanale \n\nDisponible en plusieurs coloris:\nindigo bleu clair, foncé, jaune et rouge\n\nTaille S/M (36-40) / poitrine 80-90\nTaille L/XL (42-46) / poitrine 90- 105\n\nLongueur devant 43+ 25cm de franges\nLongueur dos 80 cm\n",
+      "Image": "https://drive.google.com/file/d/1-YItloyknDCDm4NMX3zIp4LpNLnpFwfo/view?usp=drive_link",
+      "Disponible": "Oui",
+      "Univers": "Essentielles",
+      "A_la_une": "Oui"
+    },
+    {
+      "Id": "4",
+      "Nom": "TOP NIIA",
+      "Prix": "35000",
+      "Categorie": "Vêtement",
+      "Description": "DESCRIPTION:\n\nTop blouse crop à manches courtes 100% coton.\n\nMatière : crétone de coton\nCouleur indigo, et imprimé bogolan teinture naturelle artisanale \n\nDisponible en 2 coloris bleu clair et bleu foncé \nTaille S (36-38) / longueur 40 cm\nTaille M (40-42) / longueur 45cm \nTaille L/XL (44-46) / longueur 50 cm\n\n\n",
+      "Image": "https://drive.google.com/file/d/1-ehv3DVSVSniXtrLBZqSENwbGs6AHqEH/view?usp=drive_link",
+      "Disponible": "OUI",
+      "Univers": "Essentielles",
+      "A_la_une": "OUI"
+    },
+    {
+      "Id": "5",
+      "Nom": "TOP TATA",
+      "Prix": "25000",
+      "Categorie": "Vêtement",
+      "Description": "DESCRIPTION:\n\nTop imprimé bicolore sans manches courtes 100% coton.\n\nMatière : crétone de coton\nCouleur indigo, et imprimé bogolan teinture naturelle artisanale \n\nDisponible en 2 coloris bleu et marron \n\nTaille S/M (36-40) / poitrine 80-90\nTaille L  (42-44) / poitrine 90/100\n\nLongueur tunique 60 cm \n\n\n",
+      "Image": "https://drive.google.com/file/d/10tf1EmVfzOrr7gOI9p43pCtNuChGdaCb/view?usp=drive_link",
+      "Disponible": "Oui",
+      "Univers": "Essentielles",
+      "A_la_une": "OUI"
+    }
+  ],
+  "newsletters": [
+    {
+      "Id": "1781195885236",
+      "Nom": "guess",
+      "Email": "gd@gmail.com",
+      "Date": "2026-06-11"
+    }
+  ],
+  "contacts": [
+    {
+      "Id": "1781178347764",
+      "Nom": "imsi",
+      "Email": "alvin@gmail.com",
+      "Telephone": "637282921",
+      "Sujet": "rhhregd",
+      "Message": "yegd"
+    },
+    {
+      "Id": "1781287688794",
+      "Nom": "faysal",
+      "Email": "alvin@gmail.com",
+      "Telephone": "7383922",
+      "Sujet": "deq",
+      "Message": "zddzd"
+    },
+    {
+      "Id": "1781287994556",
+      "Nom": "asco",
+      "Email": "kadi@gmail.com",
+      "Telephone": "338323838",
+      "Sujet": "hg",
+      "Message": "yy"
+    }
+  ],
+  "commandes": [
+    {
+      "ID_Commande": "CMD-251430",
+      "ID_Produit": "1",
+      "Nom_Produit": "Bogolan Premium",
+      "Prix": "25000",
+      "Moyen_Paiement": "Orange Money",
+      "Date": "2026-06-11",
+      "Statut": "En attente de validation"
+    },
+    {
+      "ID_Commande": "CMD-241891",
+      "ID_Produit": "2",
+      "Nom_Produit": "Écharpe Bogolan",
+      "Prix": "10000",
+      "Moyen_Paiement": "Orange Money",
+      "Date": "2026-06-13",
+      "Statut": "En attente de validation"
+    }
+  ],
+  "surMesure": {
+    "error": "https://sheetdb.io/api/v1/0xyocxqh5qb59?sheet=SurMesure a repondu 404"
+  }
+}

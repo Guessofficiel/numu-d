@@ -240,11 +240,6 @@
     grid-template-columns: 1fr !important;
   }
 
-  .savoir-faire-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 14px !important;
-  }
-
   .hero {
     min-height: 100vh !important;
     min-height: 100svh !important;
@@ -345,13 +340,9 @@
   .about-image,
   .blog-img,
   .article-hero-img,
-  .savoir-faire-gallery img {
+  .savoir-faire-item img {
     height: auto !important;
     aspect-ratio: 4 / 3;
-  }
-
-  .savoir-faire-gallery {
-    grid-template-columns: 1fr !important;
   }
 
   .footer {
