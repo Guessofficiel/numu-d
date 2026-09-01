@@ -8,6 +8,7 @@
   src: url('../assets/fonts/RoundedElegance.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* ==========================================================================
