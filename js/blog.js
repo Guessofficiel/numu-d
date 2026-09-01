@@ -1,54 +1,52 @@
 /**
  * NUMU D - Gallery Logic
+ * Recupere toutes les images de toutes les collections (colonne Image,
+ * une ou plusieurs URLs separees par "|") pour alimenter la galerie generale.
  */
 
-const GALLERY_ITEMS = [
-    {
-        title: 'Portrait de la créatrice',
-        category: 'Créatrice',
-        image: 'assets/images/creatrice.jpeg'
-    },
-    {
-        title: 'Démarche artistique',
-        category: 'Matières',
-        image: 'assets/images/Demarche artistique.jpeg'
-    },
-    {
-        title: 'Univers artisanal NUMU D',
-        category: 'Atelier',
-        image: 'assets/images/hero_bg_new.jpg'
-    },
-    {
-        title: 'Savoir-faire textile',
-        category: 'Matières',
-        image: 'assets/images/Demarche 2.jpeg'
-    },
-    {
-        title: 'Artisans partenaires',
-        category: 'Atelier',
-        image: 'assets/images/Artisant partenaire.jpeg'
-    },
-    {
-        title: 'Référence NUMU D',
-        category: 'Références',
-        image: 'assets/images/Reference 1.jpeg'
-    },
-    {
-        title: 'Sirandou Dianka',
-        category: 'Créatrice',
-        image: 'assets/images/sirandou_dianka.png'
-    }
-];
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const gridContainer = document.getElementById('blog-grid');
     const filtersContainer = document.getElementById('blog-filters');
 
     if (!gridContainer) return;
 
-    const categories = ['Tout', ...new Set(GALLERY_ITEMS.map(item => item.category))];
+    let galleryItems = [];
+
+    try {
+        const collections = await window.NUMUD.fetchJSON(CONFIG.collectionsApi);
+        galleryItems = buildGalleryItems(collections);
+    } catch (error) {
+        console.error('Fetch error:', error);
+        gridContainer.innerHTML = '<div class="error-message" style="grid-column: 1/-1;">Impossible de charger la galerie. Veuillez réessayer plus tard.</div>';
+        return;
+    }
+
+    if (galleryItems.length === 0) {
+        gridContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Aucune image disponible pour le moment.</p>';
+        if (filtersContainer) filtersContainer.style.display = 'none';
+        return;
+    }
+
+    const categories = ['Tout', ...new Set(galleryItems.map(item => item.category).filter(Boolean))];
     renderFilters(categories);
-    renderGallery(GALLERY_ITEMS);
+    renderGallery(galleryItems);
+
+    function buildGalleryItems(collections) {
+        const items = [];
+
+        collections.forEach(item => {
+            const images = window.NUMUD.getImages(item);
+            if (images.length === 0) return;
+
+            const title = window.NUMUD.getField(item, ['Nom', 'Nom produit', 'Produit', 'Titre'], 'Produit NUMU D');
+            const category = window.NUMUD.getField(item, ['Univers', 'Universe'], '')
+                || window.NUMUD.getField(item, ['Categorie', 'Catégorie', 'Category'], '');
+
+            images.forEach(image => items.push({ title, category, image }));
+        });
+
+        return items;
+    }
 
     function renderFilters(categoriesList) {
         if (!filtersContainer) return;
@@ -64,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const category = categoriesList[Number(event.currentTarget.getAttribute('data-filter-index'))];
                 renderGallery(category === 'Tout'
-                    ? GALLERY_ITEMS
-                    : GALLERY_ITEMS.filter(item => item.category === category)
+                    ? galleryItems
+                    : galleryItems.filter(item => item.category === category)
                 );
             });
         });
@@ -75,11 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         gridContainer.innerHTML = items.map(item => {
             const title = window.NUMUD.escapeHTML(item.title);
             const category = window.NUMUD.escapeHTML(item.category);
-            const image = window.NUMUD.safeImageUrl(item.image, '');
 
             return `
                 <article class="blog-card">
-                    <img src="${image}" alt="${title}" class="blog-img" loading="lazy">
+                    <img src="${item.image}" alt="${title}" class="blog-img" loading="lazy">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span><i class="far fa-image"></i> ${category}</span>

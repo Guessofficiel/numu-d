@@ -17,10 +17,10 @@
     <style>
         .page-header { padding: 120px 0 60px; background-color: var(--primary); color: var(--white); text-align: center; }
         .page-header h1 { color: var(--accent); font-size: 3rem; margin-bottom: 10px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 30px; margin-top: 40px; }
         .product-card { background: var(--white); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); display: flex; flex-direction: column; }
         .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .product-img { height: 250px; width: 100%; object-fit: cover; }
+        .product-img { height: 380px; width: 100%; object-fit: contain; object-position: center center; background-color: #f6f2ed; }
         .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .product-category { font-size: 0.8rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
         .product-title { font-size: 1.2rem; margin-bottom: 10px; }
@@ -53,7 +53,7 @@
 
     <header class="page-header">
         <div class="container">
-            <h1>Collection Signature</h1>
+            <h1>Les signatures</h1>
             <p>Les pièces emblématiques de NUMU D, en série limitée et sur mesure.</p>
         </div>
     </header>
@@ -90,7 +90,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
                         <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
-                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                        <li><i class="fas fa-envelope"></i> contact@numu-d.com</li>
                     </ul>
                 </div>
             </div>

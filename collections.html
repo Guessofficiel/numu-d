@@ -61,7 +61,7 @@
 
         .univers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 40px;
             margin-top: 20px;
         }
@@ -82,9 +82,11 @@
         }
 
         .univers-img {
-            height: 280px;
+            height: 320px;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center center;
+            background-color: #f6f2ed;
         }
 
         .univers-content {
@@ -145,27 +147,27 @@
         <div class="container">
             <div class="univers-grid">
                 <article class="univers-card">
-                    <img src="assets/images/Essentiels.png" alt="Collection Signature" class="univers-img" loading="lazy">
+                    <img src="assets/images/2e77fdd3-90ea-4b81-86a7-a4c5b9d50ac5.jpg" alt="Collection Signature" class="univers-img" loading="lazy">
                     <div class="univers-content">
-                        <h2>La gamme essentielle</h2>
+                        <h2>ESSENTIELLE</h2>
                         <p>La collection permanente de NUMU D. Des pièces intemporelles, pensées pour accompagner le quotidien, réalisées en petites séries ou sur commande selon les modèles.</p>
                         <a href="essentielles.html" class="btn btn-primary">Découvrir les essentielles</a>
                     </div>
                 </article>
 
                 <article class="univers-card">
-                    <img src="assets/images/sirandou_presentation.jpg" alt="Les Essentielles" class="univers-img" loading="lazy">
+                    <img src="assets/images/510a9ef1-a89b-403e-92e0-543b428209d2.jpg" alt="Les Essentielles" class="univers-img" loading="lazy">
                     <div class="univers-content">
-                        <h2>Les collections signatures</h2>
+                        <h2>SIGNATURE</h2>
                         <p>Les créations emblématiques de NUMU D. Ce sont les pièces qui portent l'identité de la marque et qui prennent vie à travers les défilés, les expositions et les projets artistiques.</p>
                         <a href="signature.html" class="btn btn-primary">Découvrir les signatures</a>
                     </div>
                 </article>
 
                 <article class="univers-card">
-                    <img src="assets/images/hero_bg_new.jpg" alt="Pièces Uniques" class="univers-img" loading="lazy">
+                    <img src="assets/images/5e78ed64-37f4-469a-b7fc-24a894df417a.jpg" alt="Pièces Uniques" class="univers-img" loading="lazy">
                     <div class="univers-content">
-                        <h2>Les pièces coutures</h2>
+                        <h2>COUTURE</h2>
                         <p>Des créations sur mesure et personnalisées, imaginées en étroite collaboration avec chaque client pour donner vie à un projet unique.</p>
                         <a href="pieces-uniques.html" class="btn btn-primary">Découvrir les pièces coutures</a>
                     </div>
@@ -196,7 +198,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
                         <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
-                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                        <li><i class="fas fa-envelope"></i> contact@numu-d.com</li>
                     </ul>
                 </div>
             </div>

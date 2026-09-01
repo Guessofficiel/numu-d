@@ -52,6 +52,23 @@ window.NUMUD.getField = function getField(item, keys, fallback = '') {
     return fallback;
 };
 
+// Placeholder auto-suffisant (SVG inline) : ne depend d'aucun service externe.
+// via.placeholder.com n'est plus fiable (certificat/serveur down), d'ou l'icone
+// d'image cassee qui apparaissait quand la colonne Image est vide.
+window.NUMUD.placeholderImage = function placeholderImage(label) {
+    const text = String(label || 'Image indisponible');
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+        <rect width="600" height="500" fill="#f6f2ed"/>
+        <g fill="none" stroke="#c9beb2" stroke-width="2">
+            <rect x="185" y="165" width="230" height="170" rx="8"/>
+            <circle cx="235" cy="212" r="16"/>
+            <path d="M185 320 L262 252 L318 298 L378 242 L415 320 Z"/>
+        </g>
+        <text x="300" y="375" font-family="sans-serif" font-size="18" fill="#8a7f74" text-anchor="middle">${text}</text>
+    </svg>`;
+    return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+};
+
 window.NUMUD.imageFields = [
     'Image',
     'Images',
@@ -121,8 +138,27 @@ window.NUMUD.safeImageUrl = function safeImageUrl(value, fallback) {
     return fallback;
 };
 
+// La colonne Image peut contenir plusieurs URLs separees par "|" (1 minimum, sans limite).
+// parseImages nettoie chaque URL (espaces, valeurs vides) et reutilise safeImageUrl
+// pour valider/normaliser chacune (formules =IMAGE(), Google Drive, etc.).
+window.NUMUD.parseImages = function parseImages(imageString) {
+    const text = String(imageString || '');
+    if (!text.trim()) return [];
+
+    const parts = text.includes('|') ? text.split('|') : [text];
+
+    return parts
+        .map(part => window.NUMUD.safeImageUrl(part, ''))
+        .filter(Boolean);
+};
+
+window.NUMUD.getImages = function getImages(item) {
+    return window.NUMUD.parseImages(window.NUMUD.getField(item, window.NUMUD.imageFields));
+};
+
 window.NUMUD.getImageUrl = function getImageUrl(item, fallback) {
-    return window.NUMUD.safeImageUrl(window.NUMUD.getField(item, window.NUMUD.imageFields), fallback);
+    const images = window.NUMUD.getImages(item);
+    return images[0] || fallback;
 };
 
 window.NUMUD.truncate = function truncate(value, maxLength) {
@@ -332,7 +368,7 @@ window.NUMUD.openPaymentOrder = function openPaymentOrder(picker, methodId) {
     if (methodId === 'email') {
         const subject = encodeURIComponent(`Commande : ${productName}`);
         const body = encodeURIComponent(`Bonjour l'équipe NUMU D,\n\nJe souhaite commander le produit suivant :\n- Produit : ${productName}\n${price ? '- Prix : ' + price + ' CFA\n' : ''}\nMerci de me contacter pour la validation et la livraison.\n\nCordialement,`);
-        window.location.href = `mailto:hello@numu-d.fr?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:contact@numu-d.com?subject=${subject}&body=${body}`;
         return;
     }
 
@@ -347,7 +383,7 @@ window.NUMUD.openPaymentOrder = function openPaymentOrder(picker, methodId) {
 
 window.NUMUD.renderProductCard = function renderProductCard(item) {
     const escapeHTML = window.NUMUD.escapeHTML;
-    const imageUrl = window.NUMUD.getImageUrl(item, 'https://via.placeholder.com/300x250?text=Image+Indisponible');
+    const imageUrl = window.NUMUD.getImageUrl(item, window.NUMUD.placeholderImage('Image indisponible'));
     const id = encodeURIComponent(window.NUMUD.getField(item, ['Id', 'ID', 'Identifiant'], ''));
     const rawName = window.NUMUD.getField(item, ['Nom', 'Nom produit', 'Produit', 'Titre'], 'Produit NUMU D');
     const name = escapeHTML(rawName);

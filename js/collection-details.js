@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const rawCategory = window.NUMUD.getField(product, ['Categorie', 'Catégorie', 'Category'], 'Collection');
         const rawDescription = window.NUMUD.getField(product, ['Description', 'Description produit', 'Details', 'Détails', 'Detail'], '');
         const rawPrice = window.NUMUD.getField(product, ['Prix', 'Price', 'Tarif'], '');
-        const image = window.NUMUD.getImageUrl(product, 'https://via.placeholder.com/900x1100?text=Image+Indisponible');
+        const galleryImages = window.NUMUD.getImages(product);
+        const images = galleryImages.length ? galleryImages : [window.NUMUD.placeholderImage('Image indisponible')];
         const availability = String(window.NUMUD.getField(product, ['Disponible', 'Disponibilite', 'Disponibilité', 'Stock', 'Statut'], '')).trim().toLowerCase();
         const isAvailable = ['oui', 'yes', 'true', '1', 'disponible', 'available'].includes(availability);
 
@@ -59,7 +60,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             <a href="collections.html" style="display:inline-block; margin-bottom:20px; color:var(--secondary);"><i class="fas fa-arrow-left"></i> Retour aux collections</a>
             <div class="detail-grid">
                 <div class="detail-image-container">
-                    <img src="${image}" alt="${safeName}" class="detail-image" loading="lazy">
+                    <div class="gallery-main-wrap">
+                        <img id="detail-main-image" src="${images[0]}" alt="${safeName}" class="detail-image" loading="lazy">
+                        ${images.length > 1 ? `
+                        <button type="button" class="gallery-nav-btn gallery-prev" aria-label="Image precedente"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="gallery-nav-btn gallery-next" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+                        <span class="gallery-counter" id="gallery-counter">1 / ${images.length}</span>` : ''}
+                    </div>
+                    ${images.length > 1 ? `
+                    <div class="gallery-thumbs" id="gallery-thumbs">
+                        ${images.map((img, index) => `<button type="button" class="gallery-thumb${index === 0 ? ' active' : ''}" data-index="${index}"><img src="${img}" alt="${safeName} ${index + 1}" loading="lazy"></button>`).join('')}
+                    </div>` : ''}
                 </div>
                 <div class="detail-info">
                     <div class="detail-category">${safeCategory}</div>
@@ -85,5 +96,40 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             </div>
         `;
+
+        if (images.length > 1) initGallery(images);
+    }
+
+    function initGallery(images) {
+        const mainImage = document.getElementById('detail-main-image');
+        const counter = document.getElementById('gallery-counter');
+        const thumbsContainer = document.getElementById('gallery-thumbs');
+        const prevBtn = container.querySelector('.gallery-prev');
+        const nextBtn = container.querySelector('.gallery-next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            currentIndex = (index + images.length) % images.length;
+            mainImage.src = images[currentIndex];
+
+            if (counter) counter.textContent = `${currentIndex + 1} / ${images.length}`;
+
+            if (thumbsContainer) {
+                thumbsContainer.querySelectorAll('.gallery-thumb').forEach((thumb, thumbIndex) => {
+                    thumb.classList.toggle('active', thumbIndex === currentIndex);
+                });
+            }
+        }
+
+        if (thumbsContainer) {
+            thumbsContainer.addEventListener('click', (event) => {
+                const thumb = event.target.closest('.gallery-thumb');
+                if (!thumb) return;
+                showImage(Number(thumb.getAttribute('data-index')));
+            });
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
     }
 });

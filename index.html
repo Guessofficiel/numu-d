@@ -27,7 +27,7 @@
         /* Hero */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('assets/images/hero_bg_new.jpg') center/cover fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('assets/images/bb046049-14c8-4197-9de7-e8bf0831200c.jpg') center/cover fixed;
             display: flex;
             align-items: center;
             text-align: center;
@@ -57,7 +57,8 @@
         }
 
         .hero-logo-img {
-            max-width: 280px;
+            width: min(68vw, 560px);
+            max-width: 560px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -66,9 +67,9 @@
         }
 
         .hero-tagline {
-            font-size: 1.6rem;
+            font-size: 1.35rem;
             font-family: var(--font-secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
             animation: fadeInUp 1s ease 0.3s both;
             font-weight: 300;
             letter-spacing: 1px;
@@ -321,9 +322,11 @@
         }
         
         .product-img {
-            height: 250px;
+            height: 380px;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center center;
+            background-color: #f6f2ed;
         }
         
         .product-info {
@@ -358,7 +361,7 @@
         /* Features */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
             gap: 30px;
             text-align: center;
         }
@@ -393,19 +396,15 @@
         }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.6rem; }
             .hero-tagline { font-size: 1.2rem; }
             .univers-strip-grid { grid-template-columns: 1fr; }
             .univers-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-            .features-grid { grid-template-columns: 1fr; }
-            .savoir-faire-grid { grid-template-columns: 1fr; }
-            .savoir-faire-gallery { grid-template-columns: 1fr 1fr; }
         }
 
         /* Savoir-faire */
         .savoir-faire-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
@@ -432,7 +431,7 @@
 
         .savoir-faire-gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
             gap: 20px;
         }
 
@@ -476,9 +475,9 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title-logo">
-                    <img src="assets/images/logo-blanc.png" alt="NUMU D" class="hero-logo-img">
+                    <img src="assets/images/logo-accueil-blanc.png" alt="NUMU D" class="hero-logo-img">
                 </h1>
-                <p class="hero-tagline" style="margin-bottom: 2rem; font-size: 1.35rem;">À la croisée des savoir-faire d'hier et de la création contemporaine</p>
+                <p class="hero-tagline">À la croisée des savoir-faire d'hier et de la création contemporaine</p>
                 <div class="hero-actions">
                     <a href="collections.html" class="btn btn-primary">Découvrir les collections</a>
                 </div>
@@ -490,17 +489,17 @@
     <section class="univers-strip">
         <div class="univers-strip-grid">
             <a href="essentielles.html" class="univers-strip-item">
-                <h3>La gamme essentielle</h3>
+                <h3>ESSENTIELLES</h3>
                 <p>Les pièces emblématiques de la marque</p>
                 <span>Explorer</span>
             </a>
             <a href="signature.html" class="univers-strip-item">
-                <h3>Les collections signatures</h3>
+                <h3>SIGNATURES</h3>
                 <p>Le quotidien, conçu pour durer</p>
                 <span>Explorer</span>
             </a>
             <a href="pieces-uniques.html" class="univers-strip-item">
-                <h3>Les pièces coutures</h3>
+                <h3>COUTURES</h3>
                 <p>Créations exceptionnelles &amp; prototypes</p>
                 <span>Explorer</span>
             </a>
@@ -549,7 +548,6 @@
                     <p>Chaque création est pensée et dessinée par Sirandou, la créatrice. Matières, couleurs, volumes et détails sont imaginés pour faire dialoguer les savoir-faire artisanaux maliens avec une vision contemporaine de la mode.
 </p>
                 </div>
-                <div class="savoir-faire-grid">
                 <div class="savoir-faire-item">
                     <i class="fas fa-th"></i>
                     <h3>Tisser</h3>
@@ -615,7 +613,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
                         <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
-                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                        <li><i class="fas fa-envelope"></i> contact@numu-d.com</li>
                     </ul>
                 </div>
                 <div>
@@ -687,7 +685,7 @@
                     const description = window.NUMUD.escapeHTML(rawDescription ? window.NUMUD.truncate(rawDescription, 60) : '');
                     const rawPrice = window.NUMUD.getField(item, ['Prix', 'Price', 'Tarif'], '');
                     const price = window.NUMUD.escapeHTML(rawPrice);
-                    const image = window.NUMUD.getImageUrl(item, 'https://via.placeholder.com/300x250?text=NUMU+D');
+                    const image = window.NUMUD.getImageUrl(item, window.NUMUD.placeholderImage('NUMU D'));
                     const orderMessage = encodeURIComponent('Bonjour, je souhaite commander ' + (rawName || 'ce produit'));
                     const availability = String(window.NUMUD.getField(item, ['Disponible', 'Disponibilite', 'Disponibilité', 'Stock', 'Statut'], '')).trim().toLowerCase();
                     const isAvailable = ['oui', 'yes', 'true', '1', 'disponible', 'available'].includes(availability);

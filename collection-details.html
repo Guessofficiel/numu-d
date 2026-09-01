@@ -20,7 +20,7 @@
         
         .detail-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 50px;
         }
         
@@ -28,16 +28,100 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
+            background-color: #f6f2ed;
         }
         
         .detail-image {
             width: 100%;
-            height: auto;
-            max-height: 600px;
-            object-fit: cover;
+            height: min(78vh, 760px);
+            object-fit: contain;
+            object-position: center center;
+            background-color: #f6f2ed;
             display: block;
         }
-        
+
+        .gallery-main-wrap {
+            position: relative;
+        }
+
+        .gallery-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .gallery-nav-btn:hover {
+            background: var(--white);
+        }
+
+        .gallery-prev {
+            left: 12px;
+        }
+
+        .gallery-next {
+            right: 12px;
+        }
+
+        .gallery-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: var(--white);
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 10px;
+            padding: 12px;
+            overflow-x: auto;
+            background: #f6f2ed;
+        }
+
+        .gallery-thumb {
+            flex: 0 0 auto;
+            width: 70px;
+            height: 70px;
+            padding: 0;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            background: none;
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-thumb.active {
+            border-color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-nav-btn { width: 34px; height: 34px; font-size: 0.85rem; }
+            .gallery-thumb { width: 56px; height: 56px; }
+        }
+
         .detail-category {
             color: var(--secondary);
             text-transform: uppercase;

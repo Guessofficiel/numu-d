@@ -42,6 +42,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -57,11 +58,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--primary);
   margin-bottom: 1rem;
+  overflow-wrap: break-word;
 }
 
 p {
   margin-bottom: 1rem;
   color: #4a4a4a;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -74,10 +77,31 @@ ul {
   list-style: none;
 }
 
+li {
+  overflow-wrap: break-word;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  max-width: 100%;
+}
+
+.product-img,
+.univers-img,
+.detail-image {
+  width: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background-color: #f6f2ed;
 }
 
 /* ==========================================================================
@@ -87,7 +111,7 @@ img {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .section {
@@ -144,7 +168,10 @@ img {
    BUTTONS
    ========================================================================== */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 12px 28px;
   font-family: var(--font-primary);
   font-weight: 500;
@@ -154,6 +181,7 @@ img {
   transition: var(--transition);
   border: none;
   outline: none;
+  line-height: 1.2;
 }
 
 .btn-primary {

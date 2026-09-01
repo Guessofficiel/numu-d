@@ -30,7 +30,7 @@
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
             gap: 40px;
         }
 
@@ -52,7 +52,8 @@
         .blog-img {
             height: 250px;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #f6f2ed;
         }
 
         .blog-content {
@@ -203,7 +204,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Bamako, Mali</li>
                         <li><i class="fas fa-phone"></i> +223 79 79 85 13</li>
-                        <li><i class="fas fa-envelope"></i> hello@numu-d.fr</li>
+                        <li><i class="fas fa-envelope"></i> contact@numu-d.com</li>
                     </ul>
                 </div>
             </div>
