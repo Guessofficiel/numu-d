@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T09:06:39.379Z",
+  "generatedAt": "2026-09-29T09:16:08.582Z",
   "collections": [
     {
       "Id": "1",
@@ -18,7 +18,7 @@
       "Prix": "30000",
       "Categorie": "Vêtement",
       "Description": "DESCRIPTION:\n\nPantalon large à plis creux, 100% coton.\n\nMatière : crétone de coton\nCouleur indigo teinture naturelle artisanale \n\nDisponible en 2 coloris bleu clair et bleu foncé \n\nTaille S/M(36-40) / longueur 150 cm\nTaille L/XL (42-46) / longueur 160 cm\n\n\n",
-      "Image": "",
+      "Image": "https://drive.google.com/file/d/13CE6-hBRsEFrvpdK0vBmz0Kp3Pm-0ePX/view?usp=drive_link",
       "Disponible": "Oui",
       "Univers": "Essentielles",
       "A_la_une": "OUI"
