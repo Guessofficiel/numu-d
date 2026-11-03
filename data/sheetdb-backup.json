@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T10:16:32.854Z",
+  "generatedAt": "2026-11-03T10:17:27.673Z",
   "collections": [
     {
       "Id": "1",
@@ -7,9 +7,9 @@
       "Prix": "45000",
       "Categorie": "Vêtement",
       "Description": "DESCRIPTION:\n\nRobe longue évasée à manches courtes 100% coton.\n\nMatière : crétone de coton\nCouleur indigo teinture naturelle artisanale \n\nDisponible en 2 coloris / indigo clair et foncé \nTaille S/M (36-40) / poitrine 80-90\nTaille L/XL (42-46) / poitrine 90- 105\n\nLongueur robe 160 cm \n",
-      "Image": "https://drive.google.com/file/d/15RXeVVFhI0RZDiDY5yBrSI40Ik97pGZT/view?usp=drive_link; https://drive.google.com/file/d/11VEna5RrjuiMMfv_tz4CER-n86I3w_OT/view?usp=drive_link; https://drive.google.com/file/d/1XDjgKzWc64xlt2GOhWpj-Lts7DTc1aoD/view?usp=drive_link; https://drive.google.com/file/d/1D28y5UXy1Tbb8cYIhXNJdvhB5MsgoajX/view?usp=drive_link",
+      "Image": "https://drive.google.com/file/d/15RXeVVFhI0RZDiDY5yBrSI40Ik97pGZT/view?usp=drive_link|https://drive.google.com/file/d/11VEna5RrjuiMMfv_tz4CER-n86I3w_OT/view?usp=drive_link|https://drive.google.com/file/d/1XDjgKzWc64xlt2GOhWpj-Lts7DTc1aoD/view?usp=drive_link|https://drive.google.com/file/d/1D28y5UXy1Tbb8cYIhXNJdvhB5MsgoajX/view?usp=drive_link",
       "Disponible": "OUI",
-      "Univers": "Essentielles",
+      "Univers": "ESSENTIELLE",
       "A_la_une": "OUI"
     },
     {
@@ -18,9 +18,9 @@
       "Prix": "30000",
       "Categorie": "Vêtement",
       "Description": "DESCRIPTION:\n\nPantalon large à plis creux, 100% coton.\n\nMatière : crétone de coton\nCouleur indigo teinture naturelle artisanale \n\nDisponible en 2 coloris bleu clair et bleu foncé \n\nTaille S/M(36-40) / longueur 150 cm\nTaille L/XL (42-46) / longueur 160 cm\n\n\n",
-      "Image": "https://drive.google.com/file/d/13CE6-hBRsEFrvpdK0vBmz0Kp3Pm-0ePX/view?usp=drive_link",
+      "Image": "https://drive.google.com/file/d/13CE6-hBRsEFrvpdK0vBmz0Kp3Pm-0ePX/view?usp=drive_link|https://drive.google.com/file/d/1RzF7xHT29f9aatdXDUU76PahLGdBa9xJ/view?usp=sharing|",
       "Disponible": "Oui",
-      "Univers": "Essentielles",
+      "Univers": "ESSENTIELLE",
       "A_la_une": "OUI"
     },
     {
@@ -31,7 +31,7 @@
       "Description": "DESCRIPTION:\n\nTop à manches kimono 100% coton.\n\nMatière : pagne tissé \nCouleur indigo teinture naturelle artisanale \n\nDisponible en plusieurs coloris:\nindigo bleu clair, foncé, jaune et rouge\n\nTaille S/M (36-40) / poitrine 80-90\nTaille L/XL (42-46) / poitrine 90- 105\n\nLongueur devant 43+ 25cm de franges\nLongueur dos 80 cm\n",
       "Image": "https://drive.google.com/file/d/1-YItloyknDCDm4NMX3zIp4LpNLnpFwfo/view?usp=drive_link",
       "Disponible": "Oui",
-      "Univers": "Essentielles",
+      "Univers": "ESSENTIELLE",
       "A_la_une": "Oui"
     },
     {
@@ -40,9 +40,9 @@
       "Prix": "35000",
       "Categorie": "Vêtement",
       "Description": "DESCRIPTION:\n\nTop blouse crop à manches courtes 100% coton.\n\nMatière : crétone de coton\nCouleur indigo, et imprimé bogolan teinture naturelle artisanale \n\nDisponible en 2 coloris bleu clair et bleu foncé \nTaille S (36-38) / longueur 40 cm\nTaille M (40-42) / longueur 45cm \nTaille L/XL (44-46) / longueur 50 cm\n\n\n",
-      "Image": "https://drive.google.com/file/d/1-ehv3DVSVSniXtrLBZqSENwbGs6AHqEH/view?usp=drive_link",
+      "Image": "https://drive.google.com/file/d/1-ehv3DVSVSniXtrLBZqSENwbGs6AHqEH/view?usp=drive_link|https://drive.google.com/file/d/1GJat-murKq8a3XT0QoHJ18GqMb5udEzn/view?usp=drive_link|https://drive.google.com/file/d/1uvXITBwklZCtnUbsHEgYQZccClfHixKD/view?usp=sharing",
       "Disponible": "OUI",
-      "Univers": "Essentielles",
+      "Univers": "ESSENTIELLE",
       "A_la_une": "OUI"
     },
     {
@@ -51,9 +51,9 @@
       "Prix": "25000",
       "Categorie": "Vêtement",
       "Description": "DESCRIPTION:\n\nTop imprimé bicolore sans manches courtes 100% coton.\n\nMatière : crétone de coton\nCouleur indigo, et imprimé bogolan teinture naturelle artisanale \n\nDisponible en 2 coloris bleu et marron \n\nTaille S/M (36-40) / poitrine 80-90\nTaille L  (42-44) / poitrine 90/100\n\nLongueur tunique 60 cm \n\n\n",
-      "Image": "https://drive.google.com/file/d/10tf1EmVfzOrr7gOI9p43pCtNuChGdaCb/view?usp=drive_link",
+      "Image": "https://drive.google.com/file/d/10tf1EmVfzOrr7gOI9p43pCtNuChGdaCb/view?usp=drive_link|https://drive.google.com/file/d/1uKSNnMO1n3RkPV4bs23P2B8NauLY5TjU/view?usp=drive_link|https://drive.google.com/file/d/1kUY8Hco-JGU4C6z1Z7YSZtnms_kU7UPr/view?usp=drive_link|https://drive.google.com/file/d/1H4GiDvfVTibIvWMgLx_YIgTFTfXiuaSu/view?usp=drive_link|https://drive.google.com/file/d/1kUY8Hco-JGU4C6z1Z7YSZtnms_kU7UPr/view?usp=sharing",
       "Disponible": "Oui",
-      "Univers": "Essentielles",
+      "Univers": "ESSENTIELLE",
       "A_la_une": "OUI"
     }
   ],
